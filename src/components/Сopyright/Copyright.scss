@@ -1,0 +1,15 @@
+.copyright{
+	background-color: #1A1B57;
+	padding: 10px 0;
+
+	&__text{
+	display: flex;
+		justify-content: space-between;
+
+		p{
+			font-size: 13px;
+			color: #fff;
+			opacity: 0.5;
+		}
+	}
+}

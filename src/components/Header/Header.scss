@@ -1,0 +1,31 @@
+.header {
+	background: rgb(57, 81, 231);
+	background: linear-gradient(90deg, rgba(57, 81, 231, 1) 0%, rgba(131, 42, 185, 1) 100%);
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 40px;
+
+	&__logo{
+		width: 161px;
+		height: 16px;
+	};
+
+	&__lang {
+		display: flex;
+		align-items: center;
+
+		span {
+			color: #fff;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 16px;
+			margin-right: 8px;
+		};
+
+		&-img{
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
