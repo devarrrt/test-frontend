@@ -15,7 +15,7 @@ interface IModalBlock {
 interface FormProps {
 	name: string;
 	email: string;
-	message: string
+	text: string
 }
 
 
@@ -25,7 +25,7 @@ const LoginFormSchema = yup.object().shape({
 
 	email: yup.string().email('Неверная почта').required("Поле не должно быть пустым"),
 
-	message: yup.string().max(30, 'Максимальное кол-во символов 300')
+	text: yup.string().max(300, 'Максимальное кол-во символов 300')
 });
 
 
@@ -89,11 +89,11 @@ const ModalBlock: React.FC<IModalBlock> = ({ closeModal, title }) => {
 						label="Что непонятно или нужно уточнить"
 						type="text"
 						defaultValue=""
-						helperText={errors.message?.message}
-						error={!!errors.message}
+						helperText={errors.text?.message}
+						error={!!errors.text}
 						fullWidth
 						placeholder="Введите ваше сообщение"
-						{...register("email")} />
+						{...register("text")} />
 
 
 					<p> Отправляя данную форму, вы даете согласие на обработку своих <a href="#" > Персональных данных </a>  </p>
