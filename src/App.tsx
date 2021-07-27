@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Contacts, Disciplines, Footer, Header, Menu, News, Slider, Сopyright } from './components'
+import React, { useState, useEffect } from 'react'
+import { Contacts, Disciplines, Footer, Header, Menu, ModalBlock, News, Slider, Сopyright } from './components'
 
 
 
@@ -18,6 +18,23 @@ const dis = [
 
 const App = (props: Props) => {
 	const [disciplines, setDisciplines] = useState(dis)
+	const [visibleModal, setVisibleModal] = useState<boolean>(false)
+
+	useEffect( () => {
+		const body = document.querySelector('body')
+		//@ts-ignore
+	 body.style.overflow = visibleModal ? 'hidden' : 'auto'
+	}, [visibleModal])
+
+	const openModal = () => {
+		setVisibleModal(true)
+	}
+	const closeModal = () => {
+		setVisibleModal(false)
+		console.log('close')
+	}
+
+
 
 
 	return (
@@ -36,9 +53,13 @@ const App = (props: Props) => {
 					))}
 				</div>
 			}
-			<Contacts />
+			<Contacts openModal={openModal} />
 			<Footer />
 			<Сopyright />
+
+			{visibleModal &&
+				<ModalBlock closeModal={closeModal} title="Напишите нам!" 
+				/>}
 		</>
 	)
 }

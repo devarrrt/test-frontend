@@ -65,30 +65,6 @@ const Slider = (props: Props) => {
 		</div>
 
 
-
-{/* 
-					{data.map((item, index) =>
-					(
-						<div
-							className='slider__content'
-							key={item.id}>
-							<div className={index === currentImage ? 'slider__item' : 'slider__active'}>
-								<h2 className="slider__title">
-									{item.title}
-								</h2>
-								<p className="slider__text">
-									{item.text}
-								</p>
-
-								<button className="slider__button btn">
-									Подробнее
-								</button>
-							</div>	 
-						</div>
-						)
-					)} */}
-
-
 					<button className="slider__button-prev" onClick={prevSlide} >
 						<img src='/assets/images/arrow-prev.png' alt="prev" />
 					</button>
@@ -107,4 +83,3 @@ const Slider = (props: Props) => {
 
 
 export default Slider
-//дописать слайдер, сделать модальное окно

@@ -1,21 +1,14 @@
 import React, { useState } from 'react'
-import ModalBlock from '../ModalBlock/ModalBlock'
 import './Contacts.scss'
 
 
 
-interface Props {
-
+interface IContacts {
+	openModal: ( )=> void
 }
 
 
-const Contacts = (props: Props) => {
-const [openModal, setOpenModal] = useState<boolean>( false )
-
-const openModalBlock = ( ): void=> {
-	setOpenModal( true )
-}
-
+const Contacts: React.FC<IContacts> = ({ openModal }) => {
 
 	return (
 		<div className="contacts">
@@ -31,16 +24,13 @@ const openModalBlock = ( ): void=> {
 						<p> Тел: <span className="contacts__block-tel"> +7 (931) 538-01-70 </span>
 						</p>
 						<button className="btn"
-						onClick={ openModalBlock }
+					onClick={ openModal }
 						>
 							Написать нам
 						</button>
 					</div>
 				</div>
 			</div>
-
-				{ openModal && <ModalBlock/> }
-
 		</div>
 	)
 }
